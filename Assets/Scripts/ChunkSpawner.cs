@@ -13,7 +13,6 @@ public class ChunkSpawner : MonoBehaviour
     }
 
     private void SpawnAndMove() {
-        Debug.Log("Spawning chunks");
         var chunk = chunkPrefabs[Random.Range(0, chunkPrefabs.Length)];
 
         var numLanes = chunk.NumLanes();
