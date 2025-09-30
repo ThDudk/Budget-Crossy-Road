@@ -226,7 +226,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 4
+  orthographic size: 4.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -269,6 +269,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323b1bdb6bc8448b384e8e4782be5dc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  playerTargetPos: 2
+  catchUpCutoff: 2.2
+  timeToDieWhenIdle: 7
+  timeToCatchUp: 0.75
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,7 +462,7 @@ GameObject:
   - component: {fileID: 1328820137}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

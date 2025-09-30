@@ -7,7 +7,7 @@ public class ChunkSpawner : MonoBehaviour
     [SerializeField] private Chunk[] chunkPrefabs;
 
     public void Start() {
-        for(var i = 0; i < 10; i++) {
+        for(var i = 0; i < 100; i++) {
             SpawnAndMove();
         }
     }
