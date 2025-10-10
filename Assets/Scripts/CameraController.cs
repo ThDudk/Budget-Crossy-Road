@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour {
     
     private Vector3 velocity = Vector3.zero;
     
-    private float CameraBottomYPos => cam.ScreenToWorldPoint(new Vector3(0, 0, 0)).y;
+    private float CameraBottomYPos => cam.ScreenToWorldPoint(Vector3.zero).y;
     private float PlayerPosFromBottom => player.position.y - CameraBottomYPos;
     
     private void Start() {

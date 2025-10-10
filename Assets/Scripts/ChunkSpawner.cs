@@ -1,14 +1,43 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class ChunkSpawner : MonoBehaviour
 {
     [SerializeField] private Chunk[] chunkPrefabs;
+    [SerializeField] private float minCameraTopMargin;
+    private Dictionary<float, GameObject> chunkInstances = new();
+    
+    private Camera cam;
+    private float CamPadding => transform.position.y - cam.ScreenToWorldPoint(Vector3.up * (Screen.height - 1)).y;
+    private float screenBottom => cam.ScreenToWorldPoint(Vector3.zero).y;
 
-    public void Start() {
-        for(var i = 0; i < 100; i++) {
+
+    private void Start() {
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+    }
+
+    private bool isBelowScreen(float yTopPos) {
+        return screenBottom > yTopPos;
+    }
+    
+    public void Update() {
+        while (CamPadding < minCameraTopMargin) {
             SpawnAndMove();
+        }
+
+        List<float> itemsToRemove = new();
+        
+        foreach(var topPos in chunkInstances.Keys) {
+            if (!isBelowScreen(topPos)) continue;
+            
+            itemsToRemove.Add(topPos);
+        } 
+        
+        foreach(var item in itemsToRemove) {
+            Destroy(chunkInstances[item]);
+            chunkInstances.Remove(item);
         }
     }
 
@@ -16,7 +45,8 @@ public class ChunkSpawner : MonoBehaviour
         var chunk = chunkPrefabs[Random.Range(0, chunkPrefabs.Length)];
 
         var numLanes = chunk.NumLanes();
-        Instantiate(chunk.gameObject, transform.position + Vector3.up * Mathf.Floor(numLanes / 2f), Quaternion.identity);
+        var chunkInst = Instantiate(chunk.gameObject, transform.position + Vector3.up * Mathf.Floor(numLanes / 2f), Quaternion.identity);
+        chunkInstances[transform.position.y + chunk.NumLanes()] = chunkInst;
         transform.position += Vector3.up * numLanes;
     }
 }

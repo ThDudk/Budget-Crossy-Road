@@ -604,7 +604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   chunkPrefabs:
   - {fileID: 8726102837305654565, guid: 3216ab2864b3b4ee0bb90b5aeea5037c, type: 3}
-  minCameraTopMargin: 1
+  minCameraTopMargin: 0
 --- !u!4 &1567289495
 Transform:
   m_ObjectHideFlags: 0
