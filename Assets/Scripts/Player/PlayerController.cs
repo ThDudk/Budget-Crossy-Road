@@ -5,18 +5,21 @@ using UnityEngine;
 namespace Player {
     public class PlayerController : MonoBehaviour {
         private Rigidbody2D rb;
+        private GameManager gameManager;
+        
         [SerializeField] private float moveSecs;
         [SerializeField] private float readjustSpeed;
-        private enum States {Idle, Moving, Readjusting}
+        private enum States {MovementDisabled, Idle, Moving, Readjusting}
         private Coroutine currentRoutine;
 
         private States state = States.Idle;
 
+        public bool CanMove() => state == States.Idle;
+        
         private void Start() {
             rb = GetComponent<Rigidbody2D>();
+            gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         }
-
-        public bool CanMove() => state == States.Idle;
 
         public void TryMove(CardinalDirection direction) {
             if (!CanMove()) return;
@@ -29,6 +32,17 @@ namespace Player {
             
             StopCoroutine(currentRoutine);
             StartCoroutine(Readjust(startPos));
+        }
+
+        private void OnTriggerEnter2D(Collider2D other) {
+            if (other.gameObject.layer != LayerMask.NameToLayer("DeathZone")) return;
+
+            gameManager.Death();
+        }
+
+        public void DisableMovement() {
+            state = States.MovementDisabled;
+            StopAllCoroutines();
         }
 
         private Vector3 startPos;

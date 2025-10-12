@@ -10,7 +10,7 @@ namespace Player {
         private PlayerController controller;
 
         private InputAction left, right, up, down;
-        private Queue<CardinalDirection> moveQueue = new();
+        private readonly Queue<CardinalDirection> moveQueue = new();
         [SerializeField] private int maxQueueItems;
         
         public void Start() {

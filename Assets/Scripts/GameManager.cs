@@ -6,6 +6,7 @@ using Player;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
     private CameraController cam;
@@ -47,5 +48,16 @@ public class GameManager : MonoBehaviour {
 
     private void Update() {
         scoreText.text = Mathf.Floor(Score()).ToString(CultureInfo.CurrentCulture);
+    }
+
+    public void Death() {
+        StartCoroutine(DeathCoroutine());
+    }
+
+    private IEnumerator DeathCoroutine() {
+        cam.SetMoving(false);
+        player.DisableMovement();
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
