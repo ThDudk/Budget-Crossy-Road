@@ -1,10 +1,11 @@
 using UnityEngine;
-using Random = UnityEngine.Random;
 
-public class RandomSprite : MonoBehaviour {
-    [SerializeField] private Sprite[] textures;
+namespace utility {
+    public class RandomSprite : MonoBehaviour {
+        [SerializeField] private ProbabilityMap<Sprite> textures;
 
-    public void Start() {
-        GetComponent<SpriteRenderer>().sprite = textures[Random.Range(0, textures.Length)];
+        public void Start() {
+            GetComponent<SpriteRenderer>().sprite = textures.GetRandom();
+        }
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5428273724935395609}
   - component: {fileID: 1462421750523805323}
   m_Layer: 0
-  m_Name: Tree1
+  m_Name: Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,6 +79,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1253797182070328567}
   - component: {fileID: 5384842106038561093}
+  - component: {fileID: 4076245264474974376}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -159,3 +160,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &4076245264474974376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3945924484799315513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd1402a752b8f463c93d4157a5c2bc47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::utility.RandomSprite
+  textures:
+    _serializedList:
+    - Key: {fileID: -35104393, guid: 94bf240dc25614192883a0c664e9a817, type: 3}
+      Value: 0
+    - Key: {fileID: 788810899, guid: 94bf240dc25614192883a0c664e9a817, type: 3}
+      Value: 0
+    - Key: {fileID: -318685156, guid: 94bf240dc25614192883a0c664e9a817, type: 3}
+      Value: 0

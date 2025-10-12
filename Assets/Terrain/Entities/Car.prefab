@@ -104,12 +104,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   textures:
-  - {fileID: -1858907340, guid: 94bf240dc25614192883a0c664e9a817, type: 3}
-  - {fileID: -409868794, guid: 94bf240dc25614192883a0c664e9a817, type: 3}
-  - {fileID: -1582088923, guid: 94bf240dc25614192883a0c664e9a817, type: 3}
-  - {fileID: 1102888311, guid: 94bf240dc25614192883a0c664e9a817, type: 3}
-  - {fileID: -1513938150, guid: 94bf240dc25614192883a0c664e9a817, type: 3}
-  - {fileID: 40899155, guid: 94bf240dc25614192883a0c664e9a817, type: 3}
+    _serializedList:
+    - Key: {fileID: -1858907340, guid: 94bf240dc25614192883a0c664e9a817, type: 3}
+      Value: 0
+    - Key: {fileID: -1582088923, guid: 94bf240dc25614192883a0c664e9a817, type: 3}
+      Value: 0
+    - Key: {fileID: -409868794, guid: 94bf240dc25614192883a0c664e9a817, type: 3}
+      Value: 0
+    - Key: {fileID: 1102888311, guid: 94bf240dc25614192883a0c664e9a817, type: 3}
+      Value: 0
+    - Key: {fileID: -1513938150, guid: 94bf240dc25614192883a0c664e9a817, type: 3}
+      Value: 0
+    - Key: {fileID: 40899155, guid: 94bf240dc25614192883a0c664e9a817, type: 3}
+      Value: 0.99
 --- !u!1 &8316773641822758785
 GameObject:
   m_ObjectHideFlags: 0

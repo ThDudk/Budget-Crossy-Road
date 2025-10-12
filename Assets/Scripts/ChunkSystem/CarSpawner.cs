@@ -8,6 +8,7 @@ namespace ChunkSystem {
         
         protected override GameObject Spawn() {
             var tile = base.Spawn();
+            if (tile is null) return null;
             
             MovingTile car = tile.GetComponent<MovingTile>();
             car.direction = direction;

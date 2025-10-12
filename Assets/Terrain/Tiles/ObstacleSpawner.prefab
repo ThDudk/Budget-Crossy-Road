@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 6164652596537408869}
   - component: {fileID: 3832413892301609942}
   m_Layer: 0
-  m_Name: TreeSpawner
+  m_Name: ObstacleSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,7 +136,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   tilePrefabs:
-  - {fileID: 2414386474961670390, guid: 2435de61553ab410284ebe6fe0094a25, type: 3}
-  - {fileID: 2969956524490422467, guid: b758dab7e3e7240f4a93bbea0eda1684, type: 3}
-  - {fileID: 5774006164459023330, guid: 1ad4be3075b2844fdb1d3df8fe3faba3, type: 3}
-  spawnPercentage: 50
+    _serializedList:
+    - Key: {fileID: 2414386474961670390, guid: 2435de61553ab410284ebe6fe0094a25, type: 3}
+      Value: 0.5
+    - Key: {fileID: 5332413056796654711, guid: e142b4a7f1e0e4971b70c75235837b02, type: 3}
+      Value: 0.98

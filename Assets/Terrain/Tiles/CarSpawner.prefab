@@ -48,9 +48,9 @@ MonoBehaviour:
   tilePrefabs:
     _serializedList:
     - Key: {fileID: 8316773641822758785, guid: 39fdcc55077114896a18ae2a00aca29d, type: 3}
-      Value: 0
+      Value: 0.2
     - Key: {fileID: 4501482626075507049, guid: 7f3044ffb46814a10877dd36ba152cb8, type: 3}
-      Value: 0.8
+      Value: 0.9
   minSpawnDelay: 0.8
   maxSpawnDelay: 1.5
   speed: 5
