@@ -272,7 +272,7 @@ MonoBehaviour:
   playerTargetPos: 2
   catchUpCutoff: 2.2
   timeToDieWhenIdle: 7
-  timeToCatchUp: 0.75
+  timeToCatchUp: 0.5
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +508,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &1328820134
 MonoBehaviour:
@@ -604,7 +604,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   chunkPrefabs:
   - {fileID: 8726102837305654565, guid: 3216ab2864b3b4ee0bb90b5aeea5037c, type: 3}
-  minCameraTopMargin: 1
+  - {fileID: 4550664680118314005, guid: eb4b29984227f4ec4927d7c4a526a1d0, type: 3}
+  minCameraTopMargin: 10
 --- !u!4 &1567289495
 Transform:
   m_ObjectHideFlags: 0
