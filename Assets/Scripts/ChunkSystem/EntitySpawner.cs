@@ -1,10 +1,12 @@
 using System.Collections;
+using System.Collections.Generic;
+using AYellowpaper.SerializedCollections;
 using UnityEngine;
 
 namespace ChunkSystem {
     public class EntitySpawner : MonoBehaviour
     {
-        [SerializeField] private GameObject[] tilePrefabs;
+        [SerializeField] private SerializedDictionary<GameObject, float> tilePrefabs;
         [SerializeField] private float minSpawnDelay;
         [SerializeField] private float maxSpawnDelay;
 
@@ -13,7 +15,18 @@ namespace ChunkSystem {
         }
 
         private GameObject GetRandomTile() {
-            return tilePrefabs[Random.Range(0, tilePrefabs.Length)];
+            float value = Random.value;
+            GameObject chosenTile = null;
+            foreach(KeyValuePair<GameObject, float> pair in tilePrefabs)
+            {
+                if (pair.Value > value) continue;
+
+                if (chosenTile is null || pair.Value > tilePrefabs[chosenTile]) {
+                    chosenTile = pair.Key;
+                }
+            }
+            
+            return chosenTile;
         }
 
         private IEnumerator SpawnCycle() {

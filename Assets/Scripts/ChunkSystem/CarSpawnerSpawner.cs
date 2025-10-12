@@ -9,6 +9,7 @@ namespace ChunkSystem {
         [SerializeField] private CarSpawner carPrefab;
         [SerializeField] private float minSpeed;
         [SerializeField] private float maxSpeed;
+        [SerializeField] private float spawnDistFromCenter = 10;
 
         public void Start() {
             var instance = Instantiate(carPrefab, transform.parent);
@@ -20,7 +21,7 @@ namespace ChunkSystem {
             spawner.direction = direction;
             spawner.speed = speed;
 
-            instance.transform.position = transform.parent.position + Vector3.right * -direction * 9;
+            instance.transform.position = transform.parent.position + Vector3.right * -direction * spawnDistFromCenter;
             Destroy(gameObject);
         }
     }
