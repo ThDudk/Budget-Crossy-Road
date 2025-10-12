@@ -20,7 +20,7 @@ namespace ChunkSystem {
             spawner.direction = direction;
             spawner.speed = speed;
 
-            instance.transform.position = transform.parent.position + Vector3.right * -direction * 5;
+            instance.transform.position = transform.parent.position + Vector3.right * -direction * 9;
             Destroy(gameObject);
         }
     }
