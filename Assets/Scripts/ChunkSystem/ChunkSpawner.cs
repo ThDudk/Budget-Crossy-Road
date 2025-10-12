@@ -16,6 +16,10 @@ public class ChunkSpawner : MonoBehaviour
 
     private void Start() {
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+
+        for (int i = 0; i < 3; i++) {
+            SpawnAndMove(chunkPrefabs[0]);
+        }
     }
 
     private bool isBelowScreen(float yTopPos) {
@@ -43,7 +47,10 @@ public class ChunkSpawner : MonoBehaviour
 
     private void SpawnAndMove() {
         var chunk = chunkPrefabs[Random.Range(0, chunkPrefabs.Length)];
+        SpawnAndMove(chunk);
+    }
 
+    private void SpawnAndMove(Chunk chunk) {
         var numLanes = chunk.NumLanes();
         var chunkInst = Instantiate(chunk.gameObject, transform.position + Vector3.up * Mathf.Floor(numLanes / 2f), Quaternion.identity);
         chunkInstances[transform.position.y + chunk.NumLanes()] = chunkInst;

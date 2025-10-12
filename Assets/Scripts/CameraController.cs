@@ -3,10 +3,15 @@ using UnityEngine;
 using UnityEngine.Serialization;
 
 public class CameraController : MonoBehaviour {
+    private bool moving;
     [SerializeField] public float playerTargetPos;
     [SerializeField] public float catchUpCutoff;
     [SerializeField] private float timeToDieWhenIdle;
     [SerializeField] private float timeToCatchUp;
+
+    public void SetMoving(bool moving) {
+        this.moving = moving;
+    }
     
     private Transform player;
     private Camera cam;
@@ -22,6 +27,8 @@ public class CameraController : MonoBehaviour {
     }
 
     private void Update() {
+        if (!moving) return;
+        
         if (PlayerPosFromBottom > catchUpCutoff) CatchUp();
         else Creep();
     }
