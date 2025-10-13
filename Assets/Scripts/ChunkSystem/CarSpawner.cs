@@ -6,7 +6,7 @@ namespace ChunkSystem {
         [SerializeField] public float speed;
         [SerializeField] public float direction;
         
-        protected override GameObject Spawn() {
+        public override GameObject Spawn() {
             var tile = base.Spawn();
             if (tile is null) return null;
             

@@ -11,6 +11,8 @@ namespace ChunkSystem {
         [SerializeField] private ProbabilityMap<GameObject> tilePrefabs;
         [SerializeField] private float minSpawnDelay;
         [SerializeField] private float maxSpawnDelay;
+        public float MinSpawnDelay => minSpawnDelay;
+        public float MaxSpawnDelay => maxSpawnDelay;
 
         private void Start() {
             StartCoroutine(SpawnCycle());
@@ -25,7 +27,7 @@ namespace ChunkSystem {
 
         
         [CanBeNull]
-        protected virtual GameObject Spawn() {
+        public virtual GameObject Spawn() {
             GameObject tile = tilePrefabs.GetRandom();
             if(tile is null) return null;
             

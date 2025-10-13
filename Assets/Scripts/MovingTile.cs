@@ -16,5 +16,7 @@ public class MovingTile : MonoBehaviour {
     public void FixedUpdate() {
         rb.linearVelocity = Vector2.right * (speed * direction);
         sr.flipX = direction > 0;
+        
+        if(Mathf.Abs(transform.position.x) > 10) Destroy(gameObject);
     }
 }

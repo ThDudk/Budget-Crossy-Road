@@ -17,7 +17,6 @@ public class FollowCamera : MonoBehaviour
         
         Vector3 camBottomPos = cam.ScreenToWorldPoint(new Vector3(Screen.width / 2f, 0, 0));
         initOffset = transform.position - camBottomPos;
-        Debug.Log(gameObject.name + ": " + initOffset);
     }
 
     private void FixedUpdate() {

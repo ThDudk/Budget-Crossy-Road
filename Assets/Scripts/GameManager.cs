@@ -13,8 +13,9 @@ public class GameManager : MonoBehaviour {
     private InputActionMap playerInputs;
     private PlayerController player;
     [SerializeField] private TextMeshProUGUI scoreText;
-    
-    private float Score() => player.transform.position.y - 0;
+
+    private float highestPlayerPos;
+    private float Score() => Mathf.Floor(Mathf.Max(0, highestPlayerPos));
     
     private IEnumerator Start() {
         cam = Camera.main?.GetComponent<CameraController>();
@@ -47,7 +48,8 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Update() {
-        scoreText.text = Mathf.Floor(Score()).ToString(CultureInfo.CurrentCulture);
+        if(player.transform.position.y > highestPlayerPos) highestPlayerPos = player.transform.position.y;
+        scoreText.text = Score().ToString(CultureInfo.CurrentCulture);
     }
 
     public void Death() {

@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 7529643120757256523}
   - component: {fileID: 7034378527122346205}
   - component: {fileID: 3563725377217897301}
-  - component: {fileID: 1868961466360565150}
+  - component: {fileID: 2579850140626963723}
   m_Layer: 6
   m_Name: Car
   m_TagString: Untagged
@@ -193,8 +193,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!58 &1868961466360565150
-CircleCollider2D:
+--- !u!70 &2579850140626963723
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -228,4 +228,5 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.2
+  m_Size: {x: 0.8, y: 0.4}
+  m_Direction: 1

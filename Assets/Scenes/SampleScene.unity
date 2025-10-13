@@ -202,7 +202,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.21960784}
+  m_Color: {r: 0.07450981, g: 0.13333334, b: 0.32941177, a: 0.21960784}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
@@ -331,7 +331,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 450}
+  m_AnchoredPosition: {x: 0, y: 600}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &333672735
@@ -1079,7 +1079,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.21960784}
+  m_Color: {r: 0.07450981, g: 0.13333334, b: 0.32941177, a: 0.21960784}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
@@ -1341,7 +1341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   moveSecs: 0.15
-  readjustSpeed: 3
+  readjustSpeed: 10
 --- !u!114 &1328820136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1354,7 +1354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2feb8c915ac446f8a3286a70cb77d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  maxQueueItems: 3
+  inputDropTime: 0.2
 --- !u!58 &1328820137
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1458,8 +1458,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   chunkPrefabs:
   - {fileID: 8726102837305654565, guid: 3216ab2864b3b4ee0bb90b5aeea5037c, type: 3}
-  - {fileID: 4550664680118314005, guid: eb4b29984227f4ec4927d7c4a526a1d0, type: 3}
-  minCameraTopMargin: 10
+  - {fileID: 2373919385850008667, guid: 76a445ad34ab5449986351f9895e6f5e, type: 3}
+  minCameraTopMargin: 1
 --- !u!4 &1567289495
 Transform:
   m_ObjectHideFlags: 0
