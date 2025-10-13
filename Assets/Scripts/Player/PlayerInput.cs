@@ -11,9 +11,9 @@ namespace Player {
         private PlayerController controller;
 
         private class QueueItem : Tuple<float, CardinalDirection> {
-            public QueueItem(CardinalDirection item2) : base(Time.time, item2) {}
+            public QueueItem(CardinalDirection item2) : base(Time.unscaledTime, item2) {}
 
-            public float TimeSince => Time.time - TimeStamp;
+            public float TimeSince => Time.unscaledTime - TimeStamp;
             public float TimeStamp => Item1;
             public CardinalDirection Direction => Item2;
 

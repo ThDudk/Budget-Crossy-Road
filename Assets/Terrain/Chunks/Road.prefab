@@ -51,17 +51,17 @@ MonoBehaviour:
     - Key: 2
       Value: 0
     - Key: 3
-      Value: 0.8
+      Value: 0.7
     - Key: 4
-      Value: 0.8
+      Value: 0.7
     - Key: 5
-      Value: 0.8
+      Value: 0.9
     - Key: 6
-      Value: 0.8
+      Value: 0.9
     - Key: 7
-      Value: 0.9
+      Value: 0.99
     - Key: 8
-      Value: 0.9
+      Value: 0.99
   roadTop: {fileID: 6378993637659163629, guid: 7ec16ead6d13a41bc821c92c2d926476, type: 3}
   roadMiddle: {fileID: 4656688005421021831, guid: 408290234cb754fb28b2406e670ad27d, type: 3}
   roadBottom: {fileID: 426853515866647739, guid: 8f1bfc78d376d406986596789d5e6763, type: 3}
