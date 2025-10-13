@@ -1,5 +1,8 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using ChunkSystem;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -11,7 +14,7 @@ public class ChunkSpawner : MonoBehaviour
     
     private Camera cam;
     private float CamPadding => transform.position.y - cam.ScreenToWorldPoint(Vector3.up * (Screen.height - 1)).y;
-    private float screenBottom => cam.ScreenToWorldPoint(Vector3.zero).y;
+    private float ScreenBottom => cam.ScreenToWorldPoint(Vector3.zero).y;
 
 
     private void Start() {
@@ -22,8 +25,8 @@ public class ChunkSpawner : MonoBehaviour
         }
     }
 
-    private bool isBelowScreen(float yTopPos) {
-        return screenBottom > yTopPos;
+    private bool IsBelowScreen(float yTopPos) {
+        return ScreenBottom > yTopPos;
     }
     
     public void Update() {
@@ -34,7 +37,7 @@ public class ChunkSpawner : MonoBehaviour
         List<float> itemsToRemove = new();
         
         foreach(var topPos in chunkInstances.Keys) {
-            if (!isBelowScreen(topPos)) continue;
+            if (!IsBelowScreen(topPos)) continue;
             
             itemsToRemove.Add(topPos);
         } 
@@ -51,9 +54,12 @@ public class ChunkSpawner : MonoBehaviour
     }
 
     private void SpawnAndMove(Chunk chunk) {
-        var numLanes = chunk.NumLanes();
-        var chunkInst = Instantiate(chunk.gameObject, transform.position + Vector3.up * Mathf.Floor(numLanes / 2f), Quaternion.identity);
-        chunkInstances[transform.position.y + chunk.NumLanes()] = chunkInst;
+        var chunkInst = Instantiate(chunk.gameObject, transform.parent);
+        
+        var numLanes = chunkInst.GetComponent<Chunk>().NumLanes();
+        chunkInst.transform.position = transform.position;
+        
+        chunkInstances[transform.position.y + numLanes] = chunkInst;
         transform.position += Vector3.up * numLanes;
     }
 }

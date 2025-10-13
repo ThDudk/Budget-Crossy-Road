@@ -176,8 +176,8 @@ TextureImporter:
       name: DinoOnesie
       rect:
         serializedVersion: 2
-        x: 0
-        y: 120
+        x: 105
+        y: 60
         width: 15
         height: 15
       alignment: 0
@@ -198,8 +198,8 @@ TextureImporter:
       name: Duck
       rect:
         serializedVersion: 2
-        x: 15
-        y: 120
+        x: 105
+        y: 105
         width: 15
         height: 15
       alignment: 0
@@ -221,7 +221,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 105
+        y: 90
         width: 15
         height: 15
       alignment: 0
@@ -242,8 +242,8 @@ TextureImporter:
       name: Chicken
       rect:
         serializedVersion: 2
-        x: 15
-        y: 105
+        x: 105
+        y: 90
         width: 15
         height: 15
       alignment: 0
@@ -265,9 +265,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 30
-        y: 105
+        y: 90
         width: 15
-        height: 20
+        height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -287,9 +287,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 45
-        y: 105
+        y: 90
         width: 15
-        height: 20
+        height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -309,9 +309,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 60
-        y: 105
+        y: 90
         width: 15
-        height: 20
+        height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,9 +331,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 75
-        y: 105
+        y: 90
         width: 15
-        height: 20
+        height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -352,8 +352,8 @@ TextureImporter:
       name: DancingGoose
       rect:
         serializedVersion: 2
-        x: 90
-        y: 105
+        x: 105
+        y: 75
         width: 15
         height: 15
       alignment: 0
@@ -371,33 +371,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RoadBottom
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 90
-        width: 15
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bfbe72845c3914edea279da92ddc085f
-      internalID: 1243204286
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: RoadSingle
       rect:
         serializedVersion: 2
         x: 15
-        y: 90
+        y: 75
         width: 15
         height: 15
       alignment: 0
@@ -419,7 +397,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 30
-        y: 90
+        y: 75
         width: 15
         height: 15
       alignment: 0
@@ -441,7 +419,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 45
-        y: 90
+        y: 75
         width: 15
         height: 15
       alignment: 0
@@ -463,7 +441,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 60
-        y: 90
+        y: 75
         width: 15
         height: 15
       alignment: 0
@@ -485,7 +463,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 75
-        y: 90
+        y: 75
         width: 30
         height: 15
       alignment: 0
@@ -507,7 +485,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 60
+        y: 30
         width: 30
         height: 30
       alignment: 0
@@ -529,7 +507,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 30
-        y: 75
+        y: 60
         width: 15
         height: 15
       alignment: 0
@@ -551,7 +529,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 45
-        y: 75
+        y: 60
         width: 15
         height: 15
       alignment: 0
@@ -573,7 +551,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 60
-        y: 75
+        y: 60
         width: 15
         height: 15
       alignment: 0
@@ -595,7 +573,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 75
-        y: 75
+        y: 60
         width: 30
         height: 15
       alignment: 0
@@ -617,7 +595,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 30
-        y: 60
+        y: 45
         width: 15
         height: 15
       alignment: 0
@@ -639,7 +617,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 45
-        y: 60
+        y: 45
         width: 15
         height: 15
       alignment: 0
@@ -661,7 +639,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 60
-        y: 60
+        y: 45
         width: 15
         height: 15
       alignment: 0
@@ -683,7 +661,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 45
+        y: 15
         width: 15
         height: 15
       alignment: 0
@@ -705,7 +683,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 15
-        y: 45
+        y: 0
         width: 15
         height: 15
       alignment: 0
@@ -727,7 +705,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 30
-        y: 45
+        y: 0
         width: 15
         height: 15
       alignment: 0
@@ -749,7 +727,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 45
-        y: 45
+        y: 0
         width: 15
         height: 15
       alignment: 0
@@ -770,8 +748,8 @@ TextureImporter:
       name: LogLeft
       rect:
         serializedVersion: 2
-        x: 60
-        y: 45
+        x: 30
+        y: 30
         width: 15
         height: 15
       alignment: 0
@@ -792,8 +770,8 @@ TextureImporter:
       name: LogMiddle
       rect:
         serializedVersion: 2
-        x: 75
-        y: 45
+        x: 45
+        y: 30
         width: 15
         height: 15
       alignment: 0
@@ -814,8 +792,8 @@ TextureImporter:
       name: LogRight
       rect:
         serializedVersion: 2
-        x: 90
-        y: 45
+        x: 60
+        y: 30
         width: 15
         height: 15
       alignment: 0
@@ -837,7 +815,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 30
+        y: 0
         width: 15
         height: 15
       alignment: 0
@@ -859,7 +837,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 15
-        y: 30
+        y: 15
         width: 30
         height: 15
       alignment: 0
@@ -881,7 +859,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 45
-        y: 30
+        y: 15
         width: 30
         height: 15
       alignment: 0
@@ -903,7 +881,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 75
-        y: 30
+        y: 15
         width: 30
         height: 15
       alignment: 0
@@ -916,6 +894,116 @@ TextureImporter:
       bones: []
       spriteID: 923f343e870414cfc949aa04e7a5d420
       internalID: 1744994287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoadMiddle
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 75
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dab8490f552be4771bafc3c8c4698127
+      internalID: -1812668683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoadBottom
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 60
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2a24c040cd2c41519a83d6aff5921a2
+      internalID: -2079949023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChickenDown
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 90
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70f800d7c810147018c6fb2944e40dcb
+      internalID: -1495821274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChickenDead
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 90
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7274ce2eb7923439f899a226b2778f8f
+      internalID: -743561240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChickenJump
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 90
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8512ab3d756c454f922071128b8133a
+      internalID: 1914151698
       vertices: []
       indices: 
       edges: []
@@ -939,6 +1027,9 @@ TextureImporter:
       BlueCar: -1858907340
       BlueTruck: -1222999073
       Chicken: -1874171110
+      ChickenDead: -743561240
+      ChickenDown: -1495821274
+      ChickenJump: 1914151698
       DancingGoose: -599229715
       DinoOnesie: -1919107996
       Duck: 548333830
@@ -951,7 +1042,8 @@ TextureImporter:
       OrangeCar: -409868794
       PurpleCar: 1102888311
       RedTruck: -1344854563
-      RoadBottom: 1243204286
+      RoadBottom: -2079949023
+      RoadMiddle: -1812668683
       RoadSingle: 482465120
       RoadTop: 372482640
       Rock: -293917979

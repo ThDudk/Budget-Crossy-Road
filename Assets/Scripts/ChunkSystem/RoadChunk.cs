@@ -1,35 +1,36 @@
-using System;
 using UnityEngine;
 using utility;
 
-public class RoadChunk : Chunk
-{
-    [SerializeField] private ProbabilityMap<int> lanes;
-    [SerializeField] private GameObject roadTop;
-    [SerializeField] private GameObject roadMiddle;
-    [SerializeField] private GameObject roadBottom;
-    [SerializeField] private GameObject roadSingle;
-
-    private void Start() {
-        var numLanes = lanes.GetRandom();
-
-        if (numLanes == 0) {
-            AddLane(roadSingle);
-            return;
+namespace ChunkSystem {
+    public class RoadChunk : Chunk
+    {
+        [SerializeField] private ProbabilityMap<int> lanes;
+        [SerializeField] private GameObject roadTop;
+        [SerializeField] private GameObject roadMiddle;
+        [SerializeField] private GameObject roadBottom;
+        [SerializeField] private GameObject roadSingle;
+        private int numLanes;
+    
+        public override int NumLanes() {
+            return numLanes;
         }
-        
-        for (var i = 0; i < numLanes; i++) {
-            if(i == 0) {AddLane(roadBottom); continue; }
-            if(i == numLanes - 1) {AddLane(roadTop); continue; }
+    
+        private void Awake() {
+            numLanes = lanes.GetRandom();
 
-            AddLane(roadMiddle);
+            if (numLanes == 1) {
+                AddLane(roadSingle, 0);
+                return;
+            }
+        
+            AddLane(roadBottom, 0);
+            for (var i = 1; i < numLanes - 1; i++) AddLane(roadMiddle, i);
+            AddLane(roadTop, numLanes - 1);
         }
-    }
 
-    private void AddLane(GameObject lane) {
-        var numLanes = NumLanes();
-        
-        var laneObj = Instantiate(lane, transform);
-        laneObj.transform.position = transform.position + Vector3.up * numLanes;
+        private void AddLane(GameObject lane, int offset) {
+            var laneObj = Instantiate(lane, transform);
+            laneObj.transform.localPosition = Vector3.up * offset;
+        }
     }
 }
