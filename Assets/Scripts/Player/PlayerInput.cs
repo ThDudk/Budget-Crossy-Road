@@ -2,29 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using JetBrains.Annotations;
 using NUnit.Framework;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static Player.PlayerController;
 
 namespace Player {
     public class PlayerInput : MonoBehaviour {
         private PlayerController controller;
-
-        private class QueueItem : Tuple<float, CardinalDirection> {
-            public QueueItem(CardinalDirection item2) : base(Time.unscaledTime, item2) {}
-
-            public float TimeSince => Time.unscaledTime - TimeStamp;
-            public float TimeStamp => Item1;
-            public CardinalDirection Direction => Item2;
-
-            public override string ToString() {
-                return "(" + TimeStamp + " : " + Direction + " - " + TimeSince + ")"; 
-            }
-        }
-
         private InputAction left, right, up, down;
-        [SerializeField] private float inputDropTime;
-        private readonly Queue<QueueItem> inputQueue = new();
+        private Dictionary<InputAction, CardinalDirection> inputToDir = new();
+        private InputAction readiedInput;
+        private InputAction queuedAction;
         
         public void Start() {
             left = InputSystem.actions.FindAction("Left");
@@ -33,25 +24,42 @@ namespace Player {
             down = InputSystem.actions.FindAction("Down");
 
             controller = GetComponent<PlayerController>();
+
+            inputToDir.Add(left, CardinalDirection.Left);
+            inputToDir.Add(right, CardinalDirection.Right);
+            inputToDir.Add(up, CardinalDirection.Up);
+            inputToDir.Add(down, CardinalDirection.Down);
         }
 
-        public void Update() {
-            if (left.WasPressedThisFrame()) inputQueue.Enqueue(new(Vector2.left.ToCardinalDirection()));
-            if (right.WasPressedThisFrame()) inputQueue.Enqueue(new(Vector2.right.ToCardinalDirection()));
-            if (up.WasPressedThisFrame()) inputQueue.Enqueue(new(Vector2.up.ToCardinalDirection()));
-            if (down.WasPressedThisFrame()) inputQueue.Enqueue(new(Vector2.down.ToCardinalDirection()));
+        private void Ready(InputAction action) {
+            readiedInput = action;
+            controller.Ready(inputToDir[action]);
+        }
+
+        private void Update() {
+            if (queuedAction == null && GetInput() != null) {
+                queuedAction = GetInput();
+            }
         }
 
         private void FixedUpdate() {
-            if (!inputQueue.Any() || !controller.CanMove()) return;
-
-            while (inputQueue.Count > 0) {
-                var item = inputQueue.Dequeue();
-                if (item.TimeSince > inputDropTime) continue;
-                
-                controller.TryMove(item.Direction);
-                return;
+            if (queuedAction != null && controller.CanReady()) {
+                Ready(queuedAction);
+                queuedAction = null;
             }
+
+            if (controller.CanMove() && !readiedInput.IsPressed()) {
+                controller.Move();
+            }
+        }
+
+        [CanBeNull]
+        private InputAction GetInput() {
+            if(left.WasPressedThisFrame()) return left;
+            if(right.WasPressedThisFrame()) return right;
+            if(up.WasPressedThisFrame()) return up;
+            if(down.WasPressedThisFrame()) return down;
+            return null;
         }
     }
 }
