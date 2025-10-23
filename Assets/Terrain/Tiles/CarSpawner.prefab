@@ -51,8 +51,8 @@ MonoBehaviour:
       Value: 0.1
     - Key: {fileID: 4501482626075507049, guid: 7f3044ffb46814a10877dd36ba152cb8, type: 3}
       Value: 0.9
-  minSpawnDelay: 0.7
-  maxSpawnDelay: 1.2
+  minSpawnDelay: 1
+  maxSpawnDelay: 1.5
   speed: 5
   direction: 0
 --- !u!212 &7763048409240240144
