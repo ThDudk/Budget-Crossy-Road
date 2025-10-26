@@ -34,6 +34,9 @@ namespace ChunkSystem {
             var dir = spawner.direction;
             var pos = spawner.transform.position;
 
+            // iterate once to provide space so the initial random delay doesn't look weird
+            pos.x += spawner.speed * dir * Random.Range(spawner.MinSpawnDelay, spawner.MaxSpawnDelay);
+            
             while (Vector3.Distance(pos, spawner.transform.position) < spawnDistFromCenter * 2) {
                 var car = spawner.Spawn();
 

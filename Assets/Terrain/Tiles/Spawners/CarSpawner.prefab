@@ -113,3 +113,4 @@ MonoBehaviour:
   direction: 0
   minSpawnDelay: 1
   maxSpawnDelay: 1.5
+  randomInitialOffset: 1
