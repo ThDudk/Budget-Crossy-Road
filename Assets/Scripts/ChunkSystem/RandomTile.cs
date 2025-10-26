@@ -1,18 +1,25 @@
-using System;
+using JetBrains.Annotations;
 using UnityEngine;
 using utility;
-using Random = UnityEngine.Random;
 
-public class RandomTile : MonoBehaviour {
-    [SerializeField] private ProbabilityMap<GameObject> tilePrefabs;
+namespace ChunkSystem {
+    public class RandomTile : MonoBehaviour {
+        [SerializeField] private ProbabilityMap<GameObject> tilePrefabs;
 
-    private void Start() {
-        Destroy(gameObject);
+        private void Start() {
+            Destroy(gameObject);
         
-        var tile = tilePrefabs.GetRandom();
-        if (tile is null) return;
+            Spawn();
+        }
+
+        [CanBeNull]
+        protected GameObject Spawn() {
+            var tile = tilePrefabs.GetRandom();
+            if (tile is null) return null;
         
-        GameObject tileInstance = Instantiate(tile, transform.parent, true);
-        tileInstance.transform.position = transform.position;
+            GameObject tileInstance = Instantiate(tile, transform.parent, true);
+            tileInstance.transform.position = transform.position;
+            return tileInstance;
+        }
     }
 }

@@ -1,14 +1,15 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 using utility;
 
 namespace ChunkSystem {
-    public class RoadChunk : Chunk
+    public class MultiLaneChunk : Chunk
     {
         [SerializeField] private ProbabilityMap<int> lanes;
-        [SerializeField] private GameObject roadTop;
-        [SerializeField] private GameObject roadMiddle;
-        [SerializeField] private GameObject roadBottom;
-        [SerializeField] private GameObject roadSingle;
+        [FormerlySerializedAs("roadTop")] [SerializeField] private GameObject top;
+        [FormerlySerializedAs("roadMiddle")] [SerializeField] private GameObject middle;
+        [FormerlySerializedAs("roadBottom")] [SerializeField] private GameObject bottom;
+        [FormerlySerializedAs("roadSingle")] [SerializeField] private GameObject single;
         private int numLanes;
     
         public override int NumLanes() {
@@ -19,13 +20,13 @@ namespace ChunkSystem {
             numLanes = lanes.GetRandom();
 
             if (numLanes == 1) {
-                AddLane(roadSingle, 0);
+                AddLane(single, 0);
                 return;
             }
         
-            AddLane(roadBottom, 0);
-            for (var i = 1; i < numLanes - 1; i++) AddLane(roadMiddle, i);
-            AddLane(roadTop, numLanes - 1);
+            AddLane(bottom, 0);
+            for (var i = 1; i < numLanes - 1; i++) AddLane(middle, i);
+            AddLane(top, numLanes - 1);
         }
 
         private void AddLane(GameObject lane, int offset) {

@@ -17,7 +17,7 @@ namespace DisqualificationRules {
         
         public static DisqualificationRuleSet AllRules() {
             DisqualificationRuleSet set = new DisqualificationRuleSet();
-            set.Add(new NoRepeatRoadsRule());
+            set.Add(new NoRepeatMultiLanesRule());
             return set;
         }
     }

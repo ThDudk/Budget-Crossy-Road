@@ -1903,6 +1903,7 @@ MonoBehaviour:
   chunkPrefabs:
   - {fileID: 8726102837305654565, guid: 3216ab2864b3b4ee0bb90b5aeea5037c, type: 3}
   - {fileID: 2373919385850008667, guid: 76a445ad34ab5449986351f9895e6f5e, type: 3}
+  - {fileID: 7189604853889743954, guid: f87a70b6cd97b4173aa503cd1f107ebb, type: 3}
   minCameraTopMargin: 1
 --- !u!4 &1567289495
 Transform:

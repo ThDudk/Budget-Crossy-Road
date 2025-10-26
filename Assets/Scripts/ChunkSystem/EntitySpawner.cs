@@ -1,38 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
-using AYellowpaper.SerializedCollections;
+using Entities;
 using JetBrains.Annotations;
 using UnityEngine;
 using utility;
 
 namespace ChunkSystem {
-    public class EntitySpawner : MonoBehaviour
-    {
-        [SerializeField] private ProbabilityMap<GameObject> tilePrefabs;
-        [SerializeField] private float minSpawnDelay;
-        [SerializeField] private float maxSpawnDelay;
-        public float MinSpawnDelay => minSpawnDelay;
-        public float MaxSpawnDelay => maxSpawnDelay;
-
-        private void Start() {
-            StartCoroutine(SpawnCycle());
-        }
-
-        private IEnumerator SpawnCycle() {
-            while (true) {
-                yield return new WaitForSeconds(Random.Range(minSpawnDelay, maxSpawnDelay));
-                Spawn();
-            }
-        }
-
+    public class EntitySpawner : MonoBehaviour {
+        [SerializeField] private ProbabilityMap<MovingTile> tilePrefabs;
+        [SerializeField] public float speed;
+        [SerializeField] public float direction;
         
         [CanBeNull]
-        public virtual GameObject Spawn() {
-            GameObject tile = tilePrefabs.GetRandom();
+        public MovingTile Spawn() {
+            MovingTile tile = tilePrefabs.GetRandom();
             if(tile is null) return null;
             
-            var tileInstance = Instantiate(tile, transform.parent, true);
+            var tileInstance = Instantiate(tile, transform.parent);
             tileInstance.transform.position = transform.position;
+            tileInstance.speed = speed;
+            tileInstance.direction = direction;
+            
             return tileInstance;
         }
     }
