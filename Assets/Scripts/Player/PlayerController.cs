@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace Player {
     public class PlayerController : MonoBehaviour {
@@ -9,6 +10,9 @@ namespace Player {
         private static readonly int OnJump = Animator.StringToHash("OnJump");
         private static readonly int OnLand = Animator.StringToHash("OnLand");
         private static readonly int OnDeath = Animator.StringToHash("OnDeath");
+        
+        [SerializeField] private AudioResource jumpSfx;
+        
         private Rigidbody2D rb;
         private GameManager gameManager;
         private Animator animator;
@@ -62,6 +66,7 @@ namespace Player {
 
             startPos = transform.position;
             var endPos = transform.position + direction.ToVector3();
+            AudioManager.PlaySfx(jumpSfx, AudioManager.SfxGroup);
 
             while (elapsedTime < moveSecs) {
                 elapsedTime += Time.fixedDeltaTime;
