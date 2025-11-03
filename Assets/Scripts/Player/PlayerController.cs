@@ -34,7 +34,7 @@ namespace Player {
         private void Start() {
             rb = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
-            sprite = GetComponentInChildren<SpriteRenderer>();
+            sprite = GetComponentsInChildren<SpriteRenderer>()[0];
             gameManager = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         }
 

@@ -167,6 +167,7 @@ MonoBehaviour:
   speed: 5.4859548
   direction: 1
   flipSprite: 1
+  moveDelay: 0
 --- !u!50 &3563725377217897301
 Rigidbody2D:
   serializedVersion: 5
