@@ -49,11 +49,11 @@ MonoBehaviour:
     - Key: 1
       Value: 0
     - Key: 2
-      Value: 0.8
+      Value: 0.9
     - Key: 8
-      Value: 0.95
+      Value: 0.98
     - Key: 9
-      Value: 0.95
+      Value: 0.98
   top: {fileID: 2528865456933448238, guid: d5d5d077e78204a4285277c1544860e0, type: 3}
   middle: {fileID: 7982745920712452016, guid: 84117aea32ef847c78086308cd1c5f60, type: 3}
   bottom: {fileID: 7982745920712452016, guid: 84117aea32ef847c78086308cd1c5f60, type: 3}

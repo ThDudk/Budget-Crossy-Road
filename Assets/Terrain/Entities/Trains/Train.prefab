@@ -111,10 +111,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915654eeb556b496087ff87fcf537ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  speed: 6
+  speed: 10
   direction: 0
   flipSprite: 0
-  moveDelay: 4
+  moveDelay: 2
 --- !u!114 &1739844367299128195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,5 +130,5 @@ MonoBehaviour:
   leftCar: {fileID: 7356836423896153237, guid: a770821bc671746418e1088c951bf62d, type: 3}
   middleCar: {fileID: 7356836423896153237, guid: c0079a142a5ba4cedab742fbf75da337, type: 3}
   rightCar: {fileID: 7356836423896153237, guid: 571a5669ea78a40b9a7cf536770d9331, type: 3}
-  minSize: 5
-  maxSize: 8
+  minSize: 6
+  maxSize: 10

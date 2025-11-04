@@ -137,9 +137,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarSpawnerSpawner
   carSpawner: {fileID: 2759901057391010678, guid: 2f47635fd6c9746908aa383b64f93259, type: 3}
-  minSpeed: 28
-  maxSpeed: 30
-  spawnDistFromCenter: 20
+  minSpeed: 48
+  maxSpeed: 50
+  spawnDistFromCenter: 26
   fillOnStart: 0
 --- !u!212 &5052933325004184285
 SpriteRenderer:

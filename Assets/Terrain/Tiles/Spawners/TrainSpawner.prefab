@@ -200,6 +200,6 @@ MonoBehaviour:
       Value: 0
   speed: 10
   direction: -1
-  minSpawnDelay: 14
-  maxSpawnDelay: 16
+  minSpawnDelay: 8
+  maxSpawnDelay: 10
   randomInitialOffset: 1
