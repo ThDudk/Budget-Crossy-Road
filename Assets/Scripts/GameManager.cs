@@ -13,9 +13,10 @@ public class GameManager : MonoBehaviour {
     private InputActionMap playerInputs;
     private PlayerController player;
     [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI highScoreText;
 
     private float highestPlayerPos;
-    private float Score() => Mathf.Floor(Mathf.Max(0, highestPlayerPos));
+    private int Score() => (int) Mathf.Floor(Mathf.Max(0, highestPlayerPos));
     
     private IEnumerator Start() {
         cam = Camera.main?.GetComponent<CameraController>();
@@ -25,8 +26,13 @@ public class GameManager : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         
         cam.SetMoving(false);
+        
+        highScoreText.text = "High Score: " + SaveSystem.Load();
+        highScoreText.gameObject.SetActive(true);
 
         yield return StartCoroutine(WaitUntilActionPressed());
+        
+        highScoreText.gameObject.SetActive(false);
         
         cam.SetMoving(true);
     }
@@ -58,6 +64,7 @@ public class GameManager : MonoBehaviour {
 
     private IEnumerator DeathCoroutine() {
         cam.SetMoving(false);
+        SaveSystem.Save(Score());
         player.DisableMovement();
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
