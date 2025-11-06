@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class AudioManager : MonoBehaviour {
+public class Audio : MonoBehaviour {
     [SerializeField] private AudioSource sourcePrefab;
     private Camera mainCamera;
     public AudioMixer mixer;
@@ -13,7 +13,7 @@ public class AudioManager : MonoBehaviour {
     public static AudioMixerGroup SfxGroup => instance.mixer.FindMatchingGroups("SFX")[0];
     public static AudioMixerGroup MusicGroup => instance.mixer.FindMatchingGroups("Music")[0];
         
-    private static AudioManager instance;
+    private static Audio instance;
 
     private void Awake() {
         if (instance != null) {

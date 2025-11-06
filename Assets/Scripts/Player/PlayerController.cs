@@ -66,7 +66,7 @@ namespace Player {
 
             startPos = transform.position;
             var endPos = transform.position + direction.ToVector3();
-            AudioManager.PlaySfx(jumpSfx, AudioManager.SfxGroup);
+            Audio.PlaySfx(jumpSfx, Audio.SfxGroup);
 
             while (elapsedTime < moveSecs) {
                 elapsedTime += Time.fixedDeltaTime;

@@ -69,6 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   xVariation: 0.3
+  sound: {fileID: 8300000, guid: 1bcb76a8ee4054a9883234cc58ed5c45, type: 3}
 --- !u!1 &6052933311553120653
 GameObject:
   m_ObjectHideFlags: 0

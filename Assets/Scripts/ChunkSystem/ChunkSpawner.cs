@@ -44,7 +44,7 @@ namespace ChunkSystem {
             } 
         
             foreach(var item in itemsToRemove) {
-                Destroy(chunkInstances[item]);
+                Destroy(chunkInstances[item].gameObject);
                 chunkInstances.Remove(item);
             }
         }
