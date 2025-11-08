@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour {
 
     private IEnumerator DeathCoroutine() {
         cam.SetMoving(false);
-        SaveSystem.Save(Score());
+        if(Score() > SaveSystem.Load()) SaveSystem.Save(Score());
         player.DisableMovement();
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
