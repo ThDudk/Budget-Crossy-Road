@@ -59,14 +59,20 @@ public class GameManager : MonoBehaviour {
     }
 
     public void Death() {
+        if (deathCoroutineRunning) return;
         StartCoroutine(DeathCoroutine());
     }
 
+    private bool deathCoroutineRunning;
     private IEnumerator DeathCoroutine() {
+        deathCoroutineRunning = true;
         cam.SetMoving(false);
-        if(Score() > SaveSystem.Load()) SaveSystem.Save(Score());
         player.DisableMovement();
+        
+        if(Score() > SaveSystem.Load()) SaveSystem.Save(Score());
+        
         yield return new WaitForSeconds(2f);
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

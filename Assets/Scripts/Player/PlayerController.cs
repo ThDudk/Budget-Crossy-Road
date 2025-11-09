@@ -12,6 +12,7 @@ namespace Player {
         private static readonly int OnDeath = Animator.StringToHash("OnDeath");
         
         [SerializeField] private AudioResource jumpSfx;
+        [SerializeField] private GameObject eagle;
         
         private Rigidbody2D rb;
         private GameManager gameManager;
@@ -110,7 +111,11 @@ namespace Player {
             if (other.gameObject.layer != LayerMask.NameToLayer("DeathZone")) return;
             dead = true;
             
-            animator.SetTrigger(OnDeath);
+            if(!other.CompareTag("BottomOfScreen")) animator.SetTrigger(OnDeath);
+            else {
+                Instantiate(eagle);
+                animator.SetTrigger(OnLand);
+            }
 
             gameManager.Death();
         }

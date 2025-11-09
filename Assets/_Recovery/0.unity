@@ -479,7 +479,7 @@ GameObject:
   - component: {fileID: 344045828}
   m_Layer: 6
   m_Name: BottomDeathZone
-  m_TagString: BottomOfScreen
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1238,6 +1238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   scoreText: {fileID: 333672735}
   highScoreText: {fileID: 1691277715}
+  eagle: {fileID: 1202853754066470737, guid: 0b694544af4f84dfbace610504497fb4, type: 3}
 --- !u!4 &1025140517
 Transform:
   m_ObjectHideFlags: 0
@@ -1767,7 +1768,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   jumpSfx: {fileID: 6418180475301049370, guid: 1ac2c8d3efc2a46dcb6ef927989c5c03, type: 2}
-  eagle: {fileID: 1202853754066470737, guid: 0b694544af4f84dfbace610504497fb4, type: 3}
   moveSecs: 0.12
   readjustSpeed: 10
 --- !u!114 &1328820136

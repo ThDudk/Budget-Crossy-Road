@@ -22,7 +22,7 @@ namespace Entities {
                 var child = transform.parent.GetChild(i);
                 
                 ChoiceTile tile;
-                if (!child.TryGetComponent<ChoiceTile>(out tile)) continue;
+                if (!child.TryGetComponent(out tile)) continue;
                 choiceTiles.Add(tile);
                 tile.disabled = true;
             }
